@@ -6,8 +6,8 @@ import './css/styles.css';
 $(document).ready(() => {
   $("#submit-btn").click(() => {
     const weather =  $("#weather").val();
-
-    const weather_url = `http://api.openweathermap.org/data/2.5/weather?q=${weather}&appid=[API KEY HERE]`;
+    
+    const weather_url = `http://api.openweathermap.org/data/2.5/weather?q=${weather}&appid=${process.env.WEATHER_API_KEY}`;
 
     fetch(weather_url)
       .then(response => response.json())
@@ -16,7 +16,7 @@ $(document).ready(() => {
 
         const gif = data.name + " " + data.weather[0].description; // Seattle broken clouds
 
-        const giphy_url = `http://api.giphy.com/v1/gifs/search?q=${gif}&api_key=${process.env.API_KEY}`;
+        const giphy_url = `http://api.giphy.com/v1/gifs/search?q=${gif}&api_key=${process.env.GIPHY_API_KEY}`;
         fetch(giphy_url)
           .then(response => response.json())
           .then(data => getElements(data))
