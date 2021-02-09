@@ -2,7 +2,9 @@
 
 #### (Brief Description of Application)
 
-#### By (Your Name Here)
+#### By Tien Nguyen
+#### Co-Authored By: Jeroen van Seeters <vanseetersjeroen@gmail.com>`
+#### Co-Authored By: Kerry Lang <klang812@gmail.com>
 
 ## Technologies Used
 
