@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/main.js',
@@ -15,10 +16,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Shape Tracker',
+      title: 'Giphy Clone',
       template: './src/index.html',
       inject: 'body'
-    })
+    }),
+    new Dotenv()
   ],
   module: {
     rules: [
@@ -27,24 +29,6 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader'
-        ]
-      },
-      {
-        test: /\.(gif|png|jpe?g)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'assets/images/'
-            }
-          }
-        ]
-      },
-      {
-        test:/\.html$/,
-        use: [
-          'html-loader'
         ]
       },
       {
