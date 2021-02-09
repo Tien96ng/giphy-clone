@@ -1,4 +1,4 @@
-# (Application Name)
+# Giphy Weather Clone
 
 #### (Brief Description of Application)
 
